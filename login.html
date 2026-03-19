@@ -540,7 +540,7 @@
         <div id="login-form" class="tab-content active">
             <div class="form-intro">
                 <h3>Welcome Back</h3>
-                <p>fresh blooms await.</p>
+                <p>Fresh Blooms Await.</p>
             </div>
 
             <form onsubmit="handleAuth(event)">
@@ -555,7 +555,7 @@
                 <div class="input-group">
                     <div style="display: flex; justify-content: space-between;">
                         <label class="input-label">Password</label>
-                        <a href="contact.html" class="forgot-link">Forgot Password?</a>
+                      
                     </div>
                     <div class="input-field-wrapper">
                         <i class="fas fa-lock input-icon"></i>
@@ -565,11 +565,18 @@
                         </button>
                     </div>
                 </div>
+<div class="checkbox-item" style="display:flex; justify-content:space-between; align-items:center;">
+    
+    <div style="display:flex; align-items:center; gap:5px;">
+        <input type="checkbox" id="remember">
+        <label for="remember" style="margin:0;">Remember me</label>
+    </div>
 
-                <div class="checkbox-item">
-                    <input type="checkbox" id="remember">
-                    <label for="remember">remember me</label>
-                </div>
+    <a href="contact.html" class="forgot-link" style="text-decoration:none;">
+        Forgot Password?
+    </a>
+
+</div>
 
                 <button type="submit" class="btn-primary" id="login-submit">
                     <i class="fas fa-seedling"></i> Sign in

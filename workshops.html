@@ -11,7 +11,7 @@
     <!-- Google Fonts Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..900&display=swap" rel="stylesheet">
     <style>
-        /* ----- RESET & FLORIST PALETTE (Black, White, Blush Pink, Sage Green) ----- */
+        /* ----- RESET & FLORIST PALETTE ----- */
         * {
             margin: 0;
             padding: 0;
@@ -80,7 +80,7 @@
             padding: 0 1rem;
         }
         
-        /* navbar – jet black (exact copy from index) */
+        /* navbar – jet black */
         .navbar-container {
             background-color: var(--navbar-bg);
             box-shadow: 0 4px 20px rgba(0,0,0,0.4);
@@ -441,10 +441,9 @@
             border-top: 2px solid #4a3a40;
         }
         
-        /* ===== FRESH, NEAT WORKSHOPS PAGE DESIGN ===== */
-        /* Hero section with large background image (NEW design) */
+        /* ===== WORKSHOPS PAGE ===== */
+        /* Hero – full bleed with no gap (margin-top removed, padding replaced) */
         .workshops-hero-new {
-            margin-top: 82px; /* navbar height */
             position: relative;
             height: 70vh;
             min-height: 550px;
@@ -453,6 +452,7 @@
             justify-content: flex-start;
             color: white;
             overflow: hidden;
+            /* navbar height is fixed, hero starts exactly at top */
         }
         
         .workshops-hero-bg-new {
@@ -462,7 +462,7 @@
             width: 100%;
             height: 100%;
             z-index: 0;
-            background-image: url('https://images.unsplash.com/photo-1526047932273-341f2a7631f9?q=80&w=2080&auto=format&fit=crop'); /* fresh workshop hero */
+            background-image: url('https://images.unsplash.com/photo-1526047932273-341f2a7631f9?q=80&w=2080&auto=format&fit=crop');
             background-size: cover;
             background-position: center 30%;
             background-repeat: no-repeat;
@@ -551,7 +551,7 @@
             100% { opacity: 1; transform: translateX(0); }
         }
         
-        /* stats cards – minimal design */
+        /* stats cards */
         .stats-new {
             background-color: var(--bg-secondary);
             padding: 3.5rem 0;
@@ -592,14 +592,14 @@
             color: var(--text-muted);
         }
         
-        /* filter pills – softer */
+        /* filter pills – centered and interactive */
         .filter-section {
             margin: 3rem 0 2rem;
         }
         .filter-pills {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
+            justify-content: center;   /* 🔥 CENTERED */
             gap: 0.75rem;
         }
         .pill {
@@ -611,6 +611,7 @@
             font-weight: 600;
             cursor: pointer;
             transition: all 0.15s;
+            user-select: none;
         }
         .pill.active, .pill:hover {
             background: var(--sage-green);
@@ -618,7 +619,7 @@
             border-color: var(--sage-green);
         }
         
-        /* workshop cards – clean and fresh */
+        /* workshop cards */
         .workshops-grid-new {
             display: grid;
             gap: 2rem;
@@ -728,7 +729,7 @@
             color: #000;
         }
         
-        /* instructor spotlight – modern asymmetrical */
+        /* instructor spotlight */
         .instructor-new {
             background-color: var(--bg-secondary);
             border-radius: 3rem 0 3rem 0;
@@ -774,7 +775,7 @@
             font-weight: 600;
         }
         
-        /* private workshop cta – bold but clean */
+        /* private workshop cta */
         .private-cta-new {
             background: var(--jet-black);
             border-radius: 2rem;
@@ -801,7 +802,7 @@
             margin-bottom: 1rem;
             color: white;
         }
-        .private-cta-new .btn-outline-light {
+        .btn-outline-light {
             background: transparent;
             border: 2px solid var(--blush-pink);
             color: white;
@@ -815,13 +816,13 @@
             margin-top: 1.5rem;
             cursor: pointer;
         }
-        .private-cta-new .btn-outline-light:hover {
+        .btn-outline-light:hover {
             background: var(--blush-pink);
             color: #000;
             border-color: var(--blush-pink);
         }
         
-        /* footer same as before (unchanged) */
+        /* footer (unchanged) */
         .footer {
             background-color: var(--jet-black);
             color: var(--pure-white);
@@ -1028,7 +1029,7 @@
 </head>
 <body>
 
-<!-- NAVBAR – unified logo style (unchanged) -->
+<!-- NAVBAR – unified logo style -->
 <nav class="navbar-container">
     <div class="container navbar-flex">
         <a href="index.html" class="logo">
@@ -1097,18 +1098,35 @@
     </div>
 </div>
 
-<!-- NEW HERO with large image (fresh design) -->
-<section class="workshops-hero-new">
-    <div class="workshops-hero-bg-new"></div>
-    <div class="workshops-hero-content-new">
+<!-- HERO: no margin-top, attached directly below navbar -->
+<section class="workshops-hero-new" 
+         style="display:flex; justify-content:center; align-items:center; text-align:center; min-height:100vh; position:relative;">
+
+    <div class="workshops-hero-bg-new" 
+         style="position:absolute; inset:0;"></div>
+
+    <div class="workshops-hero-content-new" 
+         style="position:relative; z-index:1; max-width:700px;">
+        
         <div class="workshops-hero-sub-new">🌸 Craft & Connect</div>
-        <h1 class="workshops-hero-title-new">Create <span>With Flowers</span>, Bloom Together</h1>
-        <p class="workshops-hero-description-new">Fresh workshops every week. Learn the art of floristry in a light, welcoming studio. No experience needed.</p>
-        <a href="#workshops-grid-new" class="workshops-hero-btn-new"><i class="fas fa-calendar-alt"></i> Find your workshop</a>
+        
+        <h1 class="workshops-hero-title-new">
+            Create <span>With Flowers</span>, Bloom Together
+        </h1>
+        
+        <p class="workshops-hero-description-new">
+            Fresh workshops every week. Learn the art of floristry in a light, welcoming studio. No experience needed.
+        </p>
+        
+        <a href="#workshops-grid-new" class="workshops-hero-btn-new">
+            <i class="fas fa-calendar-alt"></i> Find your workshop
+        </a>
+    
     </div>
+
 </section>
 
-<!-- STATS (new card design) -->
+<!-- STATS -->
 <section class="stats-new">
     <div class="container">
         <div class="stats-grid-new">
@@ -1120,22 +1138,28 @@
     </div>
 </section>
 
-<!-- FILTER PILLS -->
-<div class="container filter-section" id="workshops-grid-new">
-    <div class="filter-pills">
-        <span class="pill active">All levels</span>
-        <span class="pill">Beginner</span>
-        <span class="pill">Intermediate</span>
-        <span class="pill">Masterclass</span>
-        <span class="pill">Family</span>
+<!-- FILTER PILLS – now fully interactive & centered -->
+<div class="container filter-section" 
+     style="display:flex; justify-content:center; align-items:center; transform:translateX(80px);">
+    
+    <div class="filter-pills" id="filterPills" 
+         style="display:flex; gap:10px; flex-wrap:wrap;">
+        
+        <span class="pill active" data-filter="all">All levels</span>
+        <span class="pill" data-filter="beginner">Beginner</span>
+        <span class="pill" data-filter="intermediate">Intermediate</span>
+        <span class="pill" data-filter="masterclass">Masterclass</span>
+        <span class="pill" data-filter="family">Family</span>
+    
     </div>
+
 </div>
 
-<!-- WORKSHOPS GRID (new cards) -->
-<div class="container">
+<!-- WORKSHOPS GRID (with data-filter attributes) -->
+<div class="container" id="workshops-grid-new">
     <div class="workshops-grid-new">
-        <!-- card 1 -->
-        <div class="workshop-card-new">
+        <!-- card 1: beginner -->
+        <div class="workshop-card-new" data-category="beginner">
             <div class="workshop-img-new" style="background-image: url('https://images.unsplash.com/photo-1526047932273-341f2a7631f9?q=80&w=2080&auto=format&fit=crop');"><span class="workshop-badge-new">beginner</span></div>
             <div class="workshop-content-new">
                 <div class="workshop-meta-new"><span><i class="far fa-calendar"></i> Jul 10, 6pm</span><span><i class="far fa-clock"></i> 2.5h</span></div>
@@ -1144,9 +1168,9 @@
                 <div class="workshop-footer-new"><span class="workshop-price-new">$65</span><a href="#" class="workshop-link-new">book <i class="fas fa-arrow-right"></i></a></div>
             </div>
         </div>
-        <!-- card 2 -->
-        <div class="workshop-card-new">
-            <div class="workshop-img-new" style="background-image: url('/images/w1.jpg');"><span class="workshop-badge-new">date night</span></div>
+        <!-- card 2: family / date night -->
+        <div class="workshop-card-new" data-category="family">
+            <div class="workshop-img-new" style="background-image: url('https://images.unsplash.com/photo-1526047932273-341f2a7631f9?q=80&w=2080&auto=format&fit=crop');"><span class="workshop-badge-new">date night</span></div>
             <div class="workshop-content-new">
                 <div class="workshop-meta-new"><span><i class="far fa-calendar"></i> Jul 15, 5:30pm</span><span><i class="far fa-clock"></i> 2h</span></div>
                 <h3>Sip & arrange</h3>
@@ -1154,8 +1178,8 @@
                 <div class="workshop-footer-new"><span class="workshop-price-new">$85/couple</span><a href="#" class="workshop-link-new">book <i class="fas fa-arrow-right"></i></a></div>
             </div>
         </div>
-        <!-- card 3 -->
-        <div class="workshop-card-new">
+        <!-- card 3: intermediate -->
+        <div class="workshop-card-new" data-category="intermediate">
             <div class="workshop-img-new" style="background-image: url('https://images.unsplash.com/photo-1469371670807-013ccf25f16a?q=80&w=2070&auto=format&fit=crop');"><span class="workshop-badge-new">intermediate</span></div>
             <div class="workshop-content-new">
                 <div class="workshop-meta-new"><span><i class="far fa-calendar"></i> Jul 22, 10am</span><span><i class="far fa-clock"></i> 3h</span></div>
@@ -1164,9 +1188,9 @@
                 <div class="workshop-footer-new"><span class="workshop-price-new">$95</span><a href="#" class="workshop-link-new">book <i class="fas fa-arrow-right"></i></a></div>
             </div>
         </div>
-        <!-- card 4 -->
-        <div class="workshop-card-new">
-            <div class="workshop-img-new" style="background-image: url('/images/a5.jpg');"><span class="workshop-badge-new">kids</span></div>
+        <!-- card 4: family (kids) -->
+        <div class="workshop-card-new" data-category="family">
+            <div class="workshop-img-new" style="background-image: url('https://images.unsplash.com/photo-1526047932273-341f2a7631f9?q=80&w=2080&auto=format&fit=crop');"><span class="workshop-badge-new">kids</span></div>
             <div class="workshop-content-new">
                 <div class="workshop-meta-new"><span><i class="far fa-calendar"></i> Aug 5, 1pm</span><span><i class="far fa-clock"></i> 1.5h</span></div>
                 <h3>Flower crowns</h3>
@@ -1174,9 +1198,9 @@
                 <div class="workshop-footer-new"><span class="workshop-price-new">$35</span><a href="#" class="workshop-link-new">book <i class="fas fa-arrow-right"></i></a></div>
             </div>
         </div>
-        <!-- card 5 -->
-        <div class="workshop-card-new">
-            <div class="workshop-img-new" style="background-image: url('/images/w3.jpg');"><span class="workshop-badge-new">beginner</span></div>
+        <!-- card 5: beginner -->
+        <div class="workshop-card-new" data-category="beginner">
+            <div class="workshop-img-new" style="background-image: url('https://images.unsplash.com/photo-1526047932273-341f2a7631f9?q=80&w=2080&auto=format&fit=crop');"><span class="workshop-badge-new">beginner</span></div>
             <div class="workshop-content-new">
                 <div class="workshop-meta-new"><span><i class="far fa-calendar"></i> Aug 12, 6:30pm</span><span><i class="far fa-clock"></i> 2.5h</span></div>
                 <h3>Dried arrangement</h3>
@@ -1184,9 +1208,9 @@
                 <div class="workshop-footer-new"><span class="workshop-price-new">$70</span><a href="#" class="workshop-link-new">book <i class="fas fa-arrow-right"></i></a></div>
             </div>
         </div>
-        <!-- card 6 -->
-        <div class="workshop-card-new">
-            <div class="workshop-img-new" style="background-image: url('/images/a1.jpg');"><span class="workshop-badge-new">masterclass</span></div>
+        <!-- card 6: masterclass -->
+        <div class="workshop-card-new" data-category="masterclass">
+            <div class="workshop-img-new" style="background-image: url('https://images.unsplash.com/photo-1526047932273-341f2a7631f9?q=80&w=2080&auto=format&fit=crop');"><span class="workshop-badge-new">masterclass</span></div>
             <div class="workshop-content-new">
                 <div class="workshop-meta-new"><span><i class="far fa-calendar"></i> Aug 26, 11am</span><span><i class="far fa-clock"></i> 3h</span></div>
                 <h3>Tablescapes</h3>
@@ -1197,10 +1221,10 @@
     </div>
 </div>
 
-<!-- INSTRUCTOR SPOTLIGHT (new asymmetrical) -->
+<!-- INSTRUCTOR SPOTLIGHT -->
 <div class="container">
     <div class="instructor-new">
-        <div class="instructor-img-new" style="background-image: url('/images/c1.jpg');"></div>
+        <div class="instructor-img-new" style="background-image: url('https://images.unsplash.com/photo-1526047932273-341f2a7631f9?q=80&w=2080&auto=format&fit=crop');"></div>
         <div class="instructor-content-new">
             <span class="instructor-badge">Lead Florist & Educator</span>
             <h2>Meet <span>Emily Rose</span></h2>
@@ -1210,7 +1234,7 @@
     </div>
 </div>
 
-<!-- PRIVATE WORKSHOP CTA (refreshed) -->
+<!-- PRIVATE WORKSHOP CTA -->
 <section class="private-cta-new">
     <div class="container">
         <h2>Host a Private Workshop 🌿</h2>
@@ -1225,24 +1249,12 @@
         <div class="footer-main">
             <div class="footer-brand">
               <a href="index.html" class="logo" style="display:flex; align-items:center; gap:10px; text-decoration:none;">
-    
-    <div class="logo-icon">
-        <i class="fas fa-seedling"></i>
-    </div>
-
-    <div class="logo-text-wrapper" style="white-space:nowrap;">
-        
-        <div class="logo-text" style="font-weight:bold; white-space:nowrap;">
-            Bloom<span> & Petal</span>
-        </div>
-
-        <span class="logo-tagline" style="white-space:nowrap;">
-            artful floristry
-        </span>
-
-    </div>
-
-</a>
+                <div class="logo-icon"><i class="fas fa-seedling"></i></div>
+                <div class="logo-text-wrapper" style="white-space:nowrap;">
+                    <div class="logo-text" style="font-weight:bold; white-space:nowrap;">Bloom<span> & Petal</span></div>
+                    <span class="logo-tagline" style="white-space:nowrap;">artful floristry</span>
+                </div>
+              </a>
                 <p class="footer-tagline">Handcrafted floral designs for life's beautiful moments. Studio open Tuesday–Saturday 10am–6pm.</p>
                 <div class="footer-social">
                     <a href="#" class="footer-social-link"><i class="fab fa-instagram"></i></a>
@@ -1295,18 +1307,34 @@
 <button id="scroll-top"><i class="fas fa-arrow-up"></i></button>
 
 <script>
-    (function() {
-        const htmlEl = document.documentElement;
-        const desktopTheme = document.getElementById('desktop-theme-toggle');
-        const mobileTheme = document.getElementById('mobile-theme-toggle');
-        const desktopIcon = document.getElementById('desktop-theme-icon');
-        const mobileIcon = document.getElementById('mobile-theme-icon');
-        const desktopRtl = document.getElementById('desktop-rtl-toggle');
-        const mobileRtl = document.getElementById('mobile-rtl-toggle');
+(function() {
+    // ----- theme & rtl (unchanged) -----
+    const htmlEl = document.documentElement;
+    const desktopTheme = document.getElementById('desktop-theme-toggle');
+    const mobileTheme = document.getElementById('mobile-theme-toggle');
+    const desktopIcon = document.getElementById('desktop-theme-icon');
+    const mobileIcon = document.getElementById('mobile-theme-icon');
+    const desktopRtl = document.getElementById('desktop-rtl-toggle');
+    const mobileRtl = document.getElementById('mobile-rtl-toggle');
 
-        let theme = localStorage.getItem('theme') || 'light';
-        htmlEl.setAttribute('data-theme', theme);
-        if (theme === 'dark') {
+    let theme = localStorage.getItem('theme') || 'light';
+    htmlEl.setAttribute('data-theme', theme);
+    if (theme === 'dark') {
+        htmlEl.classList.add('dark');
+        if(desktopIcon) desktopIcon.className = 'fas fa-sun';
+        if(mobileIcon) mobileIcon.className = 'fas fa-sun';
+    } else {
+        htmlEl.classList.remove('dark');
+        if(desktopIcon) desktopIcon.className = 'fas fa-circle-half-stroke';
+        if(mobileIcon) mobileIcon.className = 'fas fa-circle-half-stroke';
+    }
+
+    function toggleTheme() {
+        let currentTheme = htmlEl.getAttribute('data-theme');
+        let newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        htmlEl.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        if (newTheme === 'dark') {
             htmlEl.classList.add('dark');
             if(desktopIcon) desktopIcon.className = 'fas fa-sun';
             if(mobileIcon) mobileIcon.className = 'fas fa-sun';
@@ -1315,72 +1343,88 @@
             if(desktopIcon) desktopIcon.className = 'fas fa-circle-half-stroke';
             if(mobileIcon) mobileIcon.className = 'fas fa-circle-half-stroke';
         }
+    }
 
-        function toggleTheme() {
-            let currentTheme = htmlEl.getAttribute('data-theme');
-            let newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            htmlEl.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            if (newTheme === 'dark') {
-                htmlEl.classList.add('dark');
-                if(desktopIcon) desktopIcon.className = 'fas fa-sun';
-                if(mobileIcon) mobileIcon.className = 'fas fa-sun';
+    if(desktopTheme) desktopTheme.addEventListener('click', toggleTheme);
+    if(mobileTheme) mobileTheme.addEventListener('click', toggleTheme);
+
+    function toggleRtl() {
+        let dir = htmlEl.getAttribute('dir') === 'rtl' ? 'ltr' : 'rtl';
+        htmlEl.setAttribute('dir', dir);
+        localStorage.setItem('direction', dir);
+    }
+    if(desktopRtl) desktopRtl.addEventListener('click', toggleRtl);
+    if(mobileRtl) mobileRtl.addEventListener('click', toggleRtl);
+
+    // dropdown functions
+    window.toggleDesktopDropdown = function(id) {
+        document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('active'));
+        document.getElementById(id).classList.toggle('active');
+    };
+    window.toggleMobileDropdown = function(id) {
+        document.getElementById(id).classList.toggle('active');
+    };
+
+    // mobile menu
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeBtn = document.getElementById('close-mobile-menu');
+    if(menuBtn) {
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            mobileMenu.classList.add('active');
+        });
+    }
+    if(closeBtn) {
+        closeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            mobileMenu.classList.remove('active');
+        });
+    }
+    mobileMenu.addEventListener('click', (e) => {
+        if (e.target === mobileMenu) mobileMenu.classList.remove('active');
+    });
+
+    // scroll to top button
+    const scrollBtn = document.getElementById('scroll-top');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) scrollBtn.style.display = 'block';
+        else scrollBtn.style.display = 'none';
+    });
+    scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 1280) mobileMenu.classList.remove('active');
+    });
+
+    // ----- FILTER FUNCTIONALITY (neat & working) -----
+    const pills = document.querySelectorAll('.pill');
+    const cards = document.querySelectorAll('.workshop-card-new');
+
+    function filterWorkshops(filter) {
+        cards.forEach(card => {
+            if (filter === 'all' || card.dataset.category === filter) {
+                card.style.display = 'flex'; // cards use flex column
             } else {
-                htmlEl.classList.remove('dark');
-                if(desktopIcon) desktopIcon.className = 'fas fa-circle-half-stroke';
-                if(mobileIcon) mobileIcon.className = 'fas fa-circle-half-stroke';
+                card.style.display = 'none';
             }
-        }
-
-        if(desktopTheme) desktopTheme.addEventListener('click', toggleTheme);
-        if(mobileTheme) mobileTheme.addEventListener('click', toggleTheme);
-
-        function toggleRtl() {
-            let dir = htmlEl.getAttribute('dir') === 'rtl' ? 'ltr' : 'rtl';
-            htmlEl.setAttribute('dir', dir);
-            localStorage.setItem('direction', dir);
-        }
-        if(desktopRtl) desktopRtl.addEventListener('click', toggleRtl);
-        if(mobileRtl) mobileRtl.addEventListener('click', toggleRtl);
-
-        window.toggleDesktopDropdown = function(id) {
-            document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('active'));
-            document.getElementById(id).classList.toggle('active');
-        };
-        window.toggleMobileDropdown = function(id) {
-            document.getElementById(id).classList.toggle('active');
-        };
-
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const closeBtn = document.getElementById('close-mobile-menu');
-        if(menuBtn) {
-            menuBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                mobileMenu.classList.add('active');
-            });
-        }
-        if(closeBtn) {
-            closeBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                mobileMenu.classList.remove('active');
-            });
-        }
-        mobileMenu.addEventListener('click', (e) => {
-            if (e.target === mobileMenu) mobileMenu.classList.remove('active');
         });
+    }
 
-        const scrollBtn = document.getElementById('scroll-top');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) scrollBtn.style.display = 'block';
-            else scrollBtn.style.display = 'none';
-        });
-        scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    pills.forEach(pill => {
+        pill.addEventListener('click', function(e) {
+            // remove active class from all pills
+            pills.forEach(p => p.classList.remove('active'));
+            this.classList.add('active');
 
-        window.addEventListener('resize', () => {
-            if (window.innerWidth >= 1280) mobileMenu.classList.remove('active');
+            const filterValue = this.dataset.filter;
+            filterWorkshops(filterValue);
         });
-    })();
+    });
+
+    // initial: "all" is active, show all
+    filterWorkshops('all');
+})();
 </script>
 </body>
 </html>
